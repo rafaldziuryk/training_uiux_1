@@ -29,6 +29,56 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        backgroundColor: Colors.blueGrey,
+        appBar: AppBar(
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: <Color>[Colors.black, Colors.blue]),
+            ),
+          ),
+          title: Text('Tutorial'),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.calendar_month),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.calendar_today),
+              onPressed: () {},
+            ),
+          ],
+          leading: IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {},
+          ),
+          bottom: TabBar(
+            tabs: [
+              Text('TAB1'),
+              Text('TAB2'),
+              Text('TAB3'),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            Center(
+              child: Text('Tab'),
+            ),
+            Center(
+              child: Text('Tab'),
+            ),
+            Center(
+              child: Text('Tab'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
