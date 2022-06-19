@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: appbar(),
         body: body(),
         bottomNavigationBar: bottomNavigationBar(),
+        drawer: drawer(),
       ),
     );
   }
@@ -123,6 +124,59 @@ class _MyHomePageState extends State<MyHomePage> {
           Text('TAB2'),
           Text('TAB3'),
         ],
+      ),
+    );
+  }
+
+  //  TODO Drawer
+  Drawer drawer() {
+    return Drawer(
+      child: SafeArea(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+//              dense: true,
+//              enabled: false,
+//              isThreeLine: true,
+//              subtitle: Text("Home, sweet home"),
+//              trailing: Icon(Icons.settings),
+//              contentPadding: EdgeInsets.all(16),
+//              contentPadding: EdgeInsets.symmetric(vertical: 16),
+//              contentPadding: EdgeInsets.only(left: 16),
+              selected: selectedItem == 0,
+              title: Text("Flag"),
+              leading: Icon(Icons.flag),
+              onTap: () {
+                setState(() {
+                  selectedItem = 0;
+                });
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              selected: selectedItem == 1,
+              title: Text("Bookmark"),
+              leading: Icon(Icons.bookmark),
+              onTap: () {
+                setState(() {
+                  selectedItem = 1;
+                });
+                Navigator.of(context).pop();
+              },
+            ),
+            ListTile(
+              selected: selectedItem == 2,
+              title: Text("Book"),
+              leading: Icon(Icons.book),
+              onTap: () {
+                setState(() {
+                  selectedItem = 2;
+                });
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
