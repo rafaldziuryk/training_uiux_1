@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uiux1/page_one.dart';
 
 void main() {
   runApp(const MyApp());
@@ -98,16 +99,18 @@ class _MyHomePageState extends State<MyHomePage> {
       flexibleSpace: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: <Color>[Colors.black, Colors.blue]),
+              begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: <Color>[Colors.black, Colors.blue]),
         ),
       ),
       title: Text('Tutorial'),
       actions: [
         IconButton(
           icon: Icon(Icons.calendar_month),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => PageOne(),
+            ));
+          },
         ),
         IconButton(
           icon: Icon(Icons.calendar_today),
