@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: body(),
         bottomNavigationBar: bottomNavigationBar(),
         drawer: drawer(),
+        endDrawer: drawer(),
       ),
     );
   }
@@ -47,8 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
   BottomNavigationBar bottomNavigationBar() {
     return BottomNavigationBar(
       // type: BottomNavigationBarType.shifting,
-      // showSelectedLabels: false,
-      // showUnselectedLabels: true,
+      showSelectedLabels: false,
+      showUnselectedLabels: false,
       currentIndex: selectedItem,
       onTap: (index) {
         setState(() {
@@ -79,16 +80,58 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   TabBarView body() {
-    return const TabBarView(
+    return TabBarView(
       children: [
         Center(
-          child: Text('Tab'),
+          child: Container(
+            width: 300,
+            height: 200,
+            child: Row(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 2.0),
+                  child: Container(
+                    height: 200,
+                    width: 20,
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                        )),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    color: Colors.amberAccent,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          child: Center(child: Text(DateTime.now().toIso8601String())),
+                          padding: EdgeInsets.all(4),
+                          color: Colors.grey,
+                        ),
+                        Text("Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text("Rafał"),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
         Center(
-          child: Text('Tab'),
+          child: Text('Tab2'),
         ),
         Center(
-          child: Text('Tab'),
+          child: Text('Tab3'),
         ),
       ],
     );
@@ -132,9 +175,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //  TODO Drawer
-  Drawer drawer() {
-    return Drawer(
-      child: SafeArea(
+  Widget drawer() {
+    return SafeArea(
+      top: true,
+      child: Drawer(
         child: Column(
           children: <Widget>[
             ListTile(
