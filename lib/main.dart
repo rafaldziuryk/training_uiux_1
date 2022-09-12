@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           selectedItem = index;
         });
       },
-      items: [
+      items: const [
         BottomNavigationBarItem(
           backgroundColor: Colors.red,
           activeIcon: Icon(Icons.outlined_flag),
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   TabBarView body() {
-    return TabBarView(
+    return const TabBarView(
       children: [
         Center(
           child: Text('Tab'),
@@ -102,26 +102,26 @@ class _MyHomePageState extends State<MyHomePage> {
               begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: <Color>[Colors.black, Colors.blue]),
         ),
       ),
-      title: Text('Tutorial'),
+      title: const Text('Tutorial'),
       actions: [
         IconButton(
-          icon: Icon(Icons.calendar_month),
+          icon: const Icon(Icons.calendar_month),
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => PageOne(),
+              builder: (context) => const PageOne(),
             ));
           },
         ),
         IconButton(
-          icon: Icon(Icons.calendar_today),
+          icon: const Icon(Icons.calendar_today),
           onPressed: () {},
         ),
       ],
       leading: IconButton(
-        icon: Icon(Icons.add),
+        icon: const Icon(Icons.add),
         onPressed: () {},
       ),
-      bottom: TabBar(
+      bottom: const TabBar(
         tabs: [
           Text('TAB1'),
           Text('TAB2'),
@@ -147,8 +147,8 @@ class _MyHomePageState extends State<MyHomePage> {
 //              contentPadding: EdgeInsets.symmetric(vertical: 16),
 //              contentPadding: EdgeInsets.only(left: 16),
               selected: selectedItem == 0,
-              title: Text("Flag"),
-              leading: Icon(Icons.flag),
+              title: const Text("Flag"),
+              leading: const Icon(Icons.flag),
               onTap: () {
                 setState(() {
                   selectedItem = 0;
@@ -158,8 +158,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               selected: selectedItem == 1,
-              title: Text("Bookmark"),
-              leading: Icon(Icons.bookmark),
+              title: const Text("Bookmark"),
+              leading: const Icon(Icons.bookmark),
               onTap: () {
                 setState(() {
                   selectedItem = 1;
@@ -169,8 +169,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               selected: selectedItem == 2,
-              title: Text("Book"),
-              leading: Icon(Icons.book),
+              title: const Text("Book"),
+              leading: const Icon(Icons.book),
               onTap: () {
                 setState(() {
                   selectedItem = 2;

@@ -7,11 +7,11 @@ class PageTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Page Two'),
+        title: const Text('Page Two'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Click'),
+          child: const Text('Click'),
           onPressed: () {
             Navigator.of(context).pop();
           },

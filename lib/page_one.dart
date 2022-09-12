@@ -8,14 +8,14 @@ class PageOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Page One'),
+        title: const Text('Page One'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Click'),
+          child: const Text('Click'),
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => PageTwo(),
+              builder: (context) => const PageTwo(),
             ));
           },
         ),
