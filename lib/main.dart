@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return TabBarView(
       children: [
         Center(
-          child: Container(
+          child: SizedBox(
             width: 300,
             height: 200,
             child: Row(
@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Container(
                     height: 200,
                     width: 20,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
@@ -103,21 +103,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Expanded(
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                     color: Colors.amberAccent,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Container(
-                          child: Center(child: Text(DateTime.now().toIso8601String())),
-                          padding: EdgeInsets.all(4),
+                          padding: const EdgeInsets.all(4),
                           color: Colors.grey,
+                          child: Center(child: Text(DateTime.now().toIso8601String())),
                         ),
-                        Text("Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"),
+                        const Text("Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"),
                         ElevatedButton(
                           onPressed: () {},
-                          child: Text("Rafał"),
+                          child: const Text("Rafał"),
                         ),
                       ],
                     ),
@@ -127,10 +127,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-        Center(
+        const Center(
           child: Text('Tab2'),
         ),
-        Center(
+        const Center(
           child: Text('Tab3'),
         ),
       ],
